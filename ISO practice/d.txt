@@ -1,0 +1,18 @@
+I have an excel sheet that was scraped from the directory below
+
+https://www.lso.ca/public-resources/finding-a-lawyer-or-paralegal/lawyer-and-paralegal-directory
+
+The sheet has the following fields in their own columns:
+First name
+Last name
+Email
+Area of Law
+Organization/Firm Name
+Address
+Phone #
+
+I need all missing fields to be found and input into the excel sheet so all missing information is completed. There are 39324 results in the directory with the majority missing some information.  
+
+Confidentiality:
+
+Do not share this list or sell this list to third parties. This list must be kept confidential.

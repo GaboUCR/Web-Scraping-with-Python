@@ -1,0 +1,59 @@
+import urllib 
+import sqlite3
+import bs4
+import random
+#Ask for the contents of the page
+url ="//www.wikipedia.org"
+def retrieve_urls(url,N_pages):
+    """
+    Retrieve every website url you can access from parameter url and makes a 
+    dictionary linking url to a list of the urls, then picks a random url and
+    does the same.
+    ----------
+    url : String
+        The url of the website we want to make a request to.
+    N_pages : int
+        The number of pages we want to look
+        
+    Returns
+    -------
+    A dictionary linked to a list of all the links we can access from the url. 
+    """
+    web_links = dict()
+    for n in range(N_pages):    
+        links_list = []
+        connection = urllib.request.urlopen("https:" + url)
+        request = connection.read().decode()
+        info = bs4.BeautifulSoup(request,"html.parser")
+        
+        for link in info.find_all("a"):                
+            href = link.get("href")
+            links_list.append(href)
+        
+        web_links[url] = links_list
+        url = random.choice(links_list)
+        
+        while url in web_links.keys():
+            url = random.choice(links_list)
+        
+        
+    return web_links
+
+print(retrieve_urls(url, 1))
+#Save the links on a database
+    
+ # def url_database(links_list):
+ #    """
+ #    Saves each link on a database
+
+ #    Parameters
+ #    ----------
+ #    links_list : List
+ #        List of all the urls we can access from a certain url
+
+ #    Returns
+ #    -------
+ #    None.
+
+ #    """
+

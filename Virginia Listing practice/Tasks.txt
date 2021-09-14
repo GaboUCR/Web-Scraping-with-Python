@@ -1,0 +1,12 @@
+The library must work for virginia listing:
+
+
+Is there any design changes to be made:
+	-Assign target pattern some use. Change the only look 1,2,3,4,5 buttons.
+		-Can still use N_page table, just need better crawling(relates to more flexibility
+		when looking through tags)
+ 	
+	-Personal errors like not retrieving a row
+	   	
+	
+	

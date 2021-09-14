@@ -1,0 +1,25 @@
+import urllib 
+import sqlite3
+import bs4
+
+#Ask for the contents of the page
+
+def request(url="https://www.wikipedia.org"):
+    """
+    
+    Parameters
+    ----------
+    url : String
+        The url of the website we want to make a request to
+
+    Returns
+    -------
+    None.
+
+    """
+    request = urllib.request.urlopen(url)
+    
+    print (request.info())
+    
+
+request()
